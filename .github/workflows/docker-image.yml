@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,5 +24,5 @@ jobs:
     - name: Docker build
       run: |
         docker build -t spring-cicd .
-        docker tag spring-cicd unico67/cicdtest:${GITHUB_SHA::7}
-        docker push unico67/cicdtest:${GITHUB_SHA::7}
+        docker tag spring-cicd choijungwoo123/cicdtest:${GITHUB_SHA::7}
+        docker push choijungwoo123/cicdtest:${GITHUB_SHA::7}
